@@ -1,5 +1,4 @@
 # LoanDefault
-
 This project aims to predict whether a loan will default based on various financial and personal features of the borrower. By applying machine learning techniques (specifically a Decision Tree Classifier), the project helps financial institutions assess the risk of loan defaults and make informed lending decisions.
 
 Key Goals of the Project:
@@ -7,7 +6,7 @@ Predict loan defaults: Use machine learning to determine whether a loan will def
 Optimize lending decisions: Help banks and financial institutions make better decisions by assessing default risks.
 Provide actionable insights: The model can be used to identify risky loans and improve the overall loan approval process.
 
-Dataset
+Dataset:
 The dataset used for this analysis consists of various loan features such as:
 
 Loan Amount: The amount of money borrowed.
@@ -24,33 +23,7 @@ Problem Statement
 How can financial institutions use data to predict whether a borrower will default on a loan, allowing for better risk management and more informed lending decisions?
 This project applies a Decision Tree Classifier to the data, predicting loan defaults and providing actionable insights for lenders.
 
-
-Here’s a structured README for your Loan Default Prediction project, modeled similarly to the example you provided:
-
-Loan Default Prediction Project
-This project aims to predict whether a loan will default based on various financial and personal features of the borrower. By applying machine learning techniques (specifically a Decision Tree Classifier), the project helps financial institutions assess the risk of loan defaults and make informed lending decisions.
-
-Key Goals of the Project:
-Predict loan defaults: Use machine learning to determine whether a loan will default based on historical data.
-Optimize lending decisions: Help banks and financial institutions make better decisions by assessing default risks.
-Provide actionable insights: The model can be used to identify risky loans and improve the overall loan approval process.
-Dataset
-The dataset used for this analysis consists of various loan features such as:
-
-Loan Amount: The amount of money borrowed.
-Interest Rate: The rate charged by the lender.
-Loan Term: The duration of the loan.
-Borrower Information: Such as credit score, employment, and other demographics.
-Key Features:
-Loan Amount, Interest Rate, Loan Term: Numerical features representing the financial aspects of the loan.
-Credit Score, Employment, Marital Status: Features related to the borrower's profile.
-Target (Default): A binary target variable indicating whether the loan defaulted (1 for default, 0 for no default).
-Problem Statement
-How can financial institutions use data to predict whether a borrower will default on a loan, allowing for better risk management and more informed lending decisions?
-
-This project applies a Decision Tree Classifier to the data, predicting loan defaults and providing actionable insights for lenders.
-
-Methodology
+Methodology:
 1. Data Preprocessing:
 Handling Missing Values: Any missing or inconsistent data is cleaned.
 Encoding Categorical Features: Categorical variables such as employment status, marital status, etc., are encoded using label encoding.
