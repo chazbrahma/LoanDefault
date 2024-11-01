@@ -43,7 +43,7 @@ Results
 Model Findings:
 After training the Decision Tree Classifier, we identified patterns in the data that indicate a higher likelihood of loan defaults. Key indicators for predicting defaults include high loan amounts, lower credit scores, and longer loan terms.
 
-Accuracy: The model achieved an accuracy of approximately X% (to be filled in from model evaluation).
+Accuracy: The model achieved an accuracy of approximately % 
 Confusion Matrix: The confusion matrix provides detailed insight into the number of true positives and false positives.
 Classification Report: The precision, recall, and F1-score for both defaulted and non-defaulted loans were analyzed.
 
