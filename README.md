@@ -1,72 +1,176 @@
 # LoanDefault
-This project aims to predict whether a loan will default based on various financial and personal features of the borrower. By applying machine learning techniques (specifically a Decision Tree Classifier), the project helps financial institutions assess the risk of loan defaults and make informed lending decisions.
 
-Key Goals of the Project:
-Predict loan defaults: Use machine learning to determine whether a loan will default based on historical data.
-Optimize lending decisions: Help banks and financial institutions make better decisions by assessing default risks.
-Provide actionable insights: The model can be used to identify risky loans and improve the overall loan approval process.
+# Project Overview
 
-Dataset:
-The dataset used for this analysis consists of various loan features such as:
+The Loan Default Prediction project addresses the critical business problem of loan defaults. By analyzing historical loan and customer data, we aim to predict which applicants are at risk of defaulting. This model helps financial institutions minimize non-performing loans (NPLs), optimize loan approvals, and increase profitability by making data-driven decisions.
 
-Loan Amount: The amount of money borrowed.
-Interest Rate: The rate charged by the lender.
-Loan Term: The duration of the loan.
-Borrower Information: Such as credit score, employment, and other demographics.
+# Objective
 
-Key Features:
-Loan Amount, Interest Rate, Loan Term: Numerical features representing the financial aspects of the loan.
-Credit Score, Employment, Marital Status: Features related to the borrower's profile.
-Target (Default): A binary target variable indicating whether the loan defaulted (1 for default, 0 for no default).
+Business Problem: High default rates lead to significant financial losses. Predicting risky customers before issuing loans is vital for reducing bad debt.
 
-Problem Statement
-How can financial institutions use data to predict whether a borrower will default on a loan, allowing for better risk management and more informed lending decisions?
-This project applies a Decision Tree Classifier to the data, predicting loan defaults and providing actionable insights for lenders.
+Solution: A machine learning classification model that predicts whether an applicant will default on their loan.
 
-Methodology:
-1. Data Preprocessing:
-Handling Missing Values: Any missing or inconsistent data is cleaned.
-Encoding Categorical Features: Categorical variables such as employment status, marital status, etc., are encoded using label encoding.
-Feature Scaling: Standardization or normalization is applied to numerical features to ensure consistent model performance.
+Outcome: A deployable predictive system that helps lenders make informed decisions and minimize risk.
 
-2. Model Building:
-Decision Tree Classifier: The primary model used for predicting loan defaults.
-Train-Test Split: The data is divided into training and testing sets using an 80-20 split.
-Hyperparameter Tuning: GridSearchCV is used to fine-tune the model parameters for optimal performance.
+# Dataset
 
-3. Model Evaluation:
-Accuracy Score: To measure how well the model predicts loan defaults.
-Confusion Matrix: For a breakdown of true positives, false positives, true negatives, and false negatives.
-Classification Report: To get precision, recall, and F1-score for the default and non-default classes.
+Source: CSV format.
 
-Results
-Model Findings:
-After training the Decision Tree Classifier, we identified patterns in the data that indicate a higher likelihood of loan defaults. Key indicators for predicting defaults include high loan amounts, lower credit scores, and longer loan terms.
+Features:
 
-Accuracy: The model achieved an accuracy of approximately 88 % 
-Confusion Matrix: The confusion matrix provides detailed insight into the number of true positives and false positives.
-Classification Report: The precision, recall, and F1-score for both defaulted and non-defaulted loans were analyzed.
+Personal demographics (e.g., Age, Employment Type, Marital Status)
 
-Future Work:
-While the current model performs well, there are opportunities to improve it by:
-Exploring different algorithms such as Random Forest or Gradient Boosting to improve prediction accuracy.
-Adding additional features such as borrower employment history, number of dependents, etc.
-Experimenting with feature engineering to enhance the existing feature set.
+Financial indicators (e.g., Annual Income, Loan Amount, Credit Score)
 
-Visualizations
-Visualizations were created to provide insights into the relationship between different variables and loan defaults:
-Bar plots: Showing the distribution of loan amounts, interest rates, and loan terms for defaulted vs. non-defaulted loans.
-Confusion Matrix Plot: Visual representation of the true positives and false negatives in the prediction results.
+Behavioral features (e.g., Number of Dependents, Education Level)
 
-Technologies Used
-Python: The primary language used for analysis and modeling.
-Jupyter Notebook: Environment for developing and running the code.
-scikit-learn: For machine learning algorithms such as Decision Tree and GridSearchCV.
-Pandas and NumPy: For data manipulation and preprocessing.
-Matplotlib and Seaborn: For data visualization.
+Target variable: Default (Binary: 1 = Default, 0 = No Default)
 
-Conclusion
-This project successfully developed a predictive model to assess loan default risk based on customer financial data. The results provide valuable insights for lenders, helping them make data-driven decisions on whether to approve or reject loans. With further improvements, the model can be expanded to include additional features or alternative algorithms, increasing its prediction accuracy and usefulness.
+# Project Structure
+
+# Methodology
+
+1. Exploratory Data Analysis (EDA)
+
+A comprehensive EDA was conducted to understand data distribution, detect missing values, and identify correlations. Key findings include:
+
+Imbalanced target variable: Approximately 18% of applicants defaulted.
+
+Strong predictors:
+
+Lower Credit Score correlates with higher default probability.
+
+Higher Loan Amount relative to income increases default risk.
+
+Employment Type and Education Level show varying risk patterns.
+
+EDA Plots:
+
+Numeric Features Distribution:
 
 
+Categorical Features Distribution:
 
+
+Correlation Matrix:
+
+
+2. Why Decision Tree Classifier?
+
+Model Selection Rationale:
+
+Interpretability: Decision Trees are easy to visualize and explain to non-technical stakeholders.
+
+Speed: Fast to train and predict, making them ideal for initial models and quick deployment.
+
+Non-linear relationships: Capable of capturing complex interactions without requiring feature scaling.
+
+Feature Importance: Provides insight into which variables drive predictions.
+
+3. Data Preprocessing
+
+Dropped rows with missing values (approximately 2% of total records).
+
+Removed duplicate records (about 1% of dataset).
+
+Encoded categorical variables using LabelEncoder.
+
+Train-test split: 80% training, 20% testing.
+
+4. Model Building
+
+Algorithm: DecisionTreeClassifier
+
+Hyperparameter Tuning:
+
+max_depth: Optimal at 5-10 to prevent overfitting.
+
+min_samples_split: Balanced between 5 and 10.
+
+criterion: Both gini and entropy tested.
+
+Search Strategy: RandomizedSearchCV with 10 iterations and 3-fold cross-validation for efficiency.
+
+5. Model Evaluation
+
+Accuracy: ~87%
+
+Precision (Defaulters): 0.76
+
+Recall (Defaulters): 0.82
+
+F1-Score (Defaulters): 0.79
+
+Confusion Matrix:
+
+
+
+True Positives (Correct Default Prediction): 164
+
+False Positives (Incorrect Default Prediction): 34
+
+True Negatives (Correct Non-Default Prediction): 580
+
+False Negatives (Missed Default Prediction): 22
+
+6. Model Saving
+
+Saved the trained model as best_loan_default_model.pkl for later use.
+
+Loading the model for inference can be done using joblib.load().
+
+# How to Run
+
+Clone the repository:
+
+Install dependencies:
+
+Execute the Python script:
+
+Outputs:
+
+Model evaluation printed in terminal
+
+Plots saved in plots/ directory
+
+Trained model saved as best_loan_default_model.pkl
+
+# Business Insights & Recommendations
+
+# Insights
+
+Credit Score is the strongest predictor of loan default.
+
+Applicants with unstable employment types (contract/temporary) have higher default rates.
+
+Loan amounts exceeding 35% of applicant's annual income significantly increase risk.
+
+# Recommendations
+
+Risk-Based Loan Approval:
+
+Prioritize applicants with higher credit scores and stable employment.
+
+Apply stricter lending terms to high-risk profiles.
+
+Tailored Loan Products:
+
+Offer secured loans or require co-signers for applicants flagged as medium-risk.
+
+Continuous Model Update:
+
+Regularly retrain the model on new applicant data to maintain accuracy.
+
+# Future Enhancements
+
+Explore ensemble methods (Random Forest, XGBoost) for improved accuracy.
+
+Integrate external credit bureau data for enriched feature sets.
+
+Deploy as a REST API using Flask or FastAPI.
+
+Develop a dashboard for real-time monitoring and decision support.
+
+# Author
+
+Chazin Brahma
