@@ -7,9 +7,7 @@ The Loan Default Prediction project addresses the critical business problem of l
 # Objective
 
 Business Problem: High default rates lead to significant financial losses. Predicting risky customers before issuing loans is vital for reducing bad debt.
-
 Solution: A machine learning classification model that predicts whether an applicant will default on their loan.
-
 Outcome: A deployable predictive system that helps lenders make informed decisions and minimize risk.
 
 # Dataset
@@ -17,41 +15,24 @@ Outcome: A deployable predictive system that helps lenders make informed decisio
 Source: CSV format.
 
 Features:
-
 Personal demographics (e.g., Age, Employment Type, Marital Status)
-
 Financial indicators (e.g., Annual Income, Loan Amount, Credit Score)
-
 Behavioral features (e.g., Number of Dependents, Education Level)
-
 Target variable: Default (Binary: 1 = Default, 0 = No Default)
 
 # Project Structure
 
 # Methodology
-
-1. Exploratory Data Analysis (EDA)
-
+Exploratory Data Analysis (EDA)
 A comprehensive EDA was conducted to understand data distribution, detect missing values, and identify correlations. Key findings include:
-
 Imbalanced target variable: Approximately 18% of applicants defaulted.
-
 Strong predictors:
-
 Lower Credit Score correlates with higher default probability.
-
 Higher Loan Amount relative to income increases default risk.
-
 Employment Type and Education Level show varying risk patterns.
-
 EDA Plots:
-
 Numeric Features Distribution:
-
-
 Categorical Features Distribution:
-
-
 Correlation Matrix:
 
 
